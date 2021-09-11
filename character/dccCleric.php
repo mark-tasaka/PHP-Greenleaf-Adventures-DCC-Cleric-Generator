@@ -38,6 +38,7 @@
     include 'php/nameSelect.php';
     include 'php/gender.php';
     include 'php/languages.php';
+    include 'php/clericAlignment.php';
     
 
         if(isset($_POST["theCharacterName"]))
@@ -104,14 +105,42 @@
             $playerName = $_POST["thePlayerName"];
     
         }
-        
-        
+            
+        //For Random Select Diety
+        if(isset($_POST['thecheckBoxRandomDiety']) && $_POST['thecheckBoxRandomDiety'] == 1) 
+        {
+            $deity = rand (0, 18);
+        /* $deity = getRandomDiety();*/
+
+        }
+        else
+        {
+            if(isset($_POST["theDeity"]))
+            {
+                $deity = $_POST["theDeity"];
+                $deity = (int)$deity;
+            }
+
+        }
 
 
+
+        $deityName = getDeity($deity)[0];
+        $deityDescription = getDeity($deity)[1];
+        $alignment = getDeity($deity)[2];
+
+        $weaponsAllowed = getDeityWeapons($deity);
+
+        $unholy = getDeityUnholy($deity);
+
+
+        
+
+/*
         if(isset($_POST["theAlignment"]))
         {
             $alignment = $_POST["theAlignment"];
-        }
+        }*/
     
         if(isset($_POST["theLevel"]))
         {
@@ -288,26 +317,9 @@
 
 
        $trainedWeapon = $occupationArray[2];
-
-       //tradegoods array
+-
 
        $tradegoods = $occupationArray[4];
-
-       //$tradegoods = array();
-
-       //array_push($tradegoods, $occupationArray[4]);
-
-
-       
-       if(isset($_POST["theLuckyWeapon"]))
-       {
-           $luckyWeaponNumberString = $_POST["theLuckyWeapon"];
-       } 
-
-       $luckyWeaponNumber = (int)$luckyWeaponNumberString;
-       $luckyWeapon = getWeapon($luckyWeaponNumber)[0];
-
-
 
         $weaponArray = array();
         $weaponNames = array();
@@ -316,7 +328,7 @@
     //For Random Select weapon
     if(isset($_POST['thecheckBoxRandomWeaponsV3']) && $_POST['thecheckBoxRandomWeaponsV3'] == 1) 
     {
-        $weaponArray = getRandomWeapons($luckyWeaponNumber);
+        $weaponArray = getRandomWeapons($alignment);
 
     }
     else
@@ -330,8 +342,6 @@
         }
     }
 
-
-    
     
     foreach($weaponArray as $select)
     {
@@ -342,6 +352,7 @@
     {
         array_push($weaponDamage, getWeapon($select)[1]);
     }
+        
         
         $gearArray = array();
         $gearNames = array();
@@ -396,7 +407,6 @@
 
     
 	
-<!-- JQuery -->
   <img id="character_sheet"/>
    <section>
        
@@ -567,7 +577,7 @@
        
        <span id="trainedWeapon">
            <?php
-           echo $trainedWeapon . ' / ' . $tradegoods;
+           echo $trainedWeapon . ' / ' /*. $tradegoods*/;
 
            ?></span>
 
@@ -764,12 +774,7 @@
             ?>
             </span>
 
-            <span id="luckyWeapon">
-            <?php
-                echo $luckyWeapon;
-            ?>
-        </span>
-        
+
        
        <span id="weaponsList">
            <?php
