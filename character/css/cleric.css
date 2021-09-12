@@ -18,7 +18,7 @@ body{
 }
 
 
-/*DCC Warrior Generator Version 4 post data css*/
+/*DCC Cleric Generator Version 4 post data css*/
 
 #characterName{
     position:absolute;
@@ -92,6 +92,16 @@ body{
     left: 468px;
 	font-size: 0.85em;
 }
+
+
+#deity{
+    position:absolute;
+    top: 650px;
+    left: 315px;
+    font-size: 0.65em;
+    width: 270px;
+}
+
 
 
 #armourName{
@@ -236,17 +246,17 @@ body{
     top: 775px;
     left: 60px;
 	font-size: 0.7em;
-    width: 230px;
+    width: 220px;
 }
 
-
+/*
 #tradeGoods{
     position:absolute;
     top: 515px;
     left: 360px;
 	font-size: 0.6em;
 }
-
+*/
 
 
 
@@ -482,7 +492,7 @@ body{
     top: 625px;
     left: 60px;
     font-size: 0.7em;
-    width: 230px;
+    width: 220px;
 }
 
 #languages{

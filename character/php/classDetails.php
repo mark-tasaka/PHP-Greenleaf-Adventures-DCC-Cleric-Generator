@@ -1,6 +1,6 @@
 <?php
 
-/*Warrior */
+/*Cleric */
 
 function getHitPoints($level, $staminaMod)
 {
@@ -16,7 +16,7 @@ function getHitPoints($level, $staminaMod)
 
     for($i = 0; $i < $level; ++$i)
     {
-        $levelHP = rand(5, 12);
+        $levelHP = rand(3, 8);
         $levelHP += $staminaMod;
 
         if($levelHP < 3)
@@ -36,24 +36,19 @@ function savingThrowReflex($level)
 {
     $reflex = 0;
 
-    if($level >= 1 && $level <= 3)
+    if($level >= 3 && $level <= 5)
     {
         $reflex = 1;
     }
     
-    if($level >= 4 && $level <= 6)
+    if($level >= 6 && $level <= 8)
     {
         $reflex = 2;
     }
 
-    if($level >= 7 && $level <= 9)
+    if($level >= 9)
     {
         $reflex = 3;
-    }
-
-    if($level >= 10)
-    {
-        $reflex = 4;
     }
 
     return $reflex;
@@ -65,34 +60,24 @@ function savingThrowFort($level)
 {
     $fort = 0;
 
-    if($level >= 1 && $level <= 2)
+    if($level >= 1 && $level <= 3)
     {
         $fort = 1;
     }
     
-    if($level >= 3 && $level <= 4)
+    if($level >= 4 && $level <= 6)
     {
         $fort = 2;
     }
-    
-    if($level == 5)
+
+    if($level >= 7 && $level <= 9)
     {
         $fort = 3;
     }
 
-    if($level >= 6 && $level <= 7)
-    {
-        $fort = 4;
-    }
-
-    if($level >= 8 && $level <= 9)
-    {
-        $fort = 5;
-    }
-
     if($level >= 10)
     {
-        $fort = 6;
+        $fort = 4;
     }
 
     return $fort;
@@ -104,19 +89,34 @@ function savingThrowWill($level)
 {
     $will = 0;
 
-    if($level >= 3 && $level <= 5)
+    if($level >= 1 && $level <= 2)
     {
         $will = 1;
     }
     
-    if($level >= 6 && $level <= 8)
+    if($level >= 3 && $level <= 4)
     {
         $will = 2;
     }
 
-    if($level >= 9)
+    if($level == 5)
     {
         $will = 3;
+    }
+    
+    if($level >= 6 && $level <= 7)
+    {
+        $will = 4;
+    }
+    
+    if($level >= 8 && $level <= 9)
+    {
+        $will = 5;
+    }
+
+    if($level == 10)
+    {
+        $will = 6;
     }
 
     return $will;
@@ -127,153 +127,105 @@ function criticalDie($level)
 {
     $critical = "";
 
-    if($level == 1)
+    if($level >= 1 && $level <=2)
+    {
+        $critical = "1d8/III";
+    }
+
+    if($level >= 3 && $level <=4)
+    {
+        $critical = "1d10/III";
+    }
+
+    if($level >= 5 && $level <=6)
     {
         $critical = "1d12/III";
     }
 
-    if($level == 2)
+    if($level >= 7 && $level <=8)
     {
         $critical = "1d14/III";
     }
 
-    if($level == 3)
+    if($level >= 9)
     {
-        $critical = "1d16/IV";
-    }
-
-    if($level == 4)
-    {
-        $critical = "1d20/IV";
-    }
-
-    if($level == 5)
-    {
-        $critical = "1d24/V";
-    }
-
-    if($level >= 6 && $level <= 7)
-    {
-        $critical = "1d30/V";
-    }
-
-    if($level >= 8)
-    {
-        $critical = "2d20/V";
+        $critical = "1d16/III";
     }
 
     return $critical;
 
 }
 
-function deedDie($level)
+function attackBonus($level)
 {
-    $deedDie = "";
+    $attackBonus = 0;
 
-    switch($level)
+    if($level == 2)
     {
-        case 1:
-            $deedDie = "+d3";
-        break;
-        
-        case 2:
-            $deedDie = "+d4";
-        break;
-        
-        case 3:
-            $deedDie = "+d5";
-        break;
-        
-        case 4:
-            $deedDie = "+d6";
-        break;
-        
-        case 5:
-            $deedDie = "+d7";
-        break;
-        
-        case 6:
-            $deedDie = "+d8";
-        break;
-        
-        case 7:
-            $deedDie = "+d10+1";
-        break;
-
-        case 8:
-            $deedDie = "+d10+2";
-        break;
-        
-        case 9:
-            $deedDie = "+d10+3";
-        break;
-        
-        case 10:
-            $deedDie = "+d10+4";
-        break;
-
-        default:
-        $deedDie = "";
+        $attackBonus = 1;
+    }
+    
+    if($level >= 3 && $level <= 4)
+    {
+        $attackBonus = 2;
     }
 
-    return $deedDie;
+    if($level == 5)
+    {
+        $attackBonus = 3;
+    }
+
+    if($level == 6)
+    {
+        $attackBonus = 4;
+    }
+    
+    if($level >= 7 && $level <= 8)
+    {
+        $attackBonus = 5;
+    }
+
+    if($level == 9)
+    {
+        $attackBonus = 6;
+    }
+
+    if($level == 10)
+    {
+        $attackBonus = 7;
+    }
+    
+
+    return $attackBonus;
 }
 
 function actionDice($level)
 {
     $actionDice = "";
 
-    if($level <= 4)
+    if($level <= 5)
     {
         $actionDice = "1d20";
     }
 
-    if($level == 5)
+    if($level == 6)
     {
         $actionDice = "1d20+1d14";
     }
 
-    if($level == 6)
+    if($level == 7)
     {
         $actionDice = "1d20+1d16";
     }
 
-    if($level >= 7 && $level <= 9)
+    if($level >= 8)
     {
         $actionDice = "1d20+1d20";
-    }
-
-    if($level == 10)
-    {
-        $actionDice = "1d20+1d20+1d14";
     }
 
     return $actionDice;
 }
 
-
-function threatRange($level)
-{
-    $threat = "";
-
-    if($level <= 4)
-    {
-        $threat = "19-20";
-    }
-
-    if($level >= 5 && $level <= 8)
-    {
-        $threat = "18-20";
-    }
-
-    if($level >= 9)
-    {
-        $threat = "17-20";
-    }
-
-    return $threat;
-
-}
 
 function title($level, $alignment)
 {
@@ -284,23 +236,23 @@ function title($level, $alignment)
 
         if($level == 1)
         {
-            $title = "Squire";
+            $title = "Acolyte";
         }
         else if($level == 2)
         {
-            $title = "Champion";
+            $title = "Heathen-slayer";
         }
         else if($level == 3)
         {
-            $title = "Knight";
+            $title = "Brother";
         }
         else if($level == 4)
         {
-            $title = "Cavalier";
+            $title = "Curate";
         }
         else
         {
-            $title = "Paladin";
+            $title = "Father";
         }
 
     }
@@ -309,23 +261,23 @@ function title($level, $alignment)
     {
         if($level == 1)
         {
-            $title = "Wilding";
+            $title = "Witness";
         }
         else if($level == 2)
         {
-            $title = "Barbarian";
+            $title = "Pupil";
         }
         else if($level == 3)
         {
-            $title = "Berserker";
+            $title = "Chronicler";
         }
         else if($level == 4)
         {
-            $title = "Headperson";
+            $title = "Judge";
         }
         else
         {
-            $title = "Chieftain";
+            $title = "Druid";
         }
     }
 
@@ -333,28 +285,94 @@ function title($level, $alignment)
     {
         if($level == 1)
         {
-            $title = "Bandit";
+            $title = "Zealot";
         }
         else if($level == 2)
         {
-            $title = "Brigand";
+            $title = "Convert";
         }
         else if($level == 3)
         {
-            $title = "Marauder";
+            $title = "Cultist";
         }
         else if($level == 4)
         {
-            $title = "Ravager";
+            $title = "Apostle";
         }
         else
         {
-            $title = "Reaver";
+            $title = "High Priest";
         }
     }
 
 return $title;
 
 }
+
+function spellsPerLevel($level)
+{
+    if($level == 1)
+    {
+        $spells = array("4", "-", "-", "-", "-");
+        return $spells;
+    }
+    
+    if($level == 2)
+    {
+        $spells = array("5", "-", "-", "-", "-");
+        return $spells;
+    }
+    
+    if($level == 3)
+    {
+        $spells = array("5", "3", "-", "-", "-");
+        return $spells;
+    }
+    
+    if($level == 4)
+    {
+        $spells = array("6", "4", "-", "-", "-");
+        return $spells;
+    }
+    
+    if($level == 5)
+    {
+        $spells = array("6", "5", "2", "-", "-");
+        return $spells;
+    }
+    
+    if($level == 6)
+    {
+        $spells = array("7", "5", "3", "-", "-");
+        return $spells;
+    }
+    
+    if($level == 7)
+    {
+        $spells = array("7", "6", "4", "1", "-");
+        return $spells;
+    }
+    
+    if($level == 8)
+    {
+        $spells = array("8", "6", "5", "2", "-");
+        return $spells;
+    }
+    
+    if($level == 9)
+    {
+        $spells = array("8", "7", "5", "3", "1");
+        return $spells;
+    }
+    
+    if($level == 10)
+    {
+        $spells = array("9", "7", "6", "4", "2");
+        return $spells;
+    }
+
+
+}
+
 
 ?>

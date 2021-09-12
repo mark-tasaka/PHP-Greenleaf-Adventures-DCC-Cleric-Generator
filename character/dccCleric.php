@@ -105,12 +105,11 @@
             $playerName = $_POST["thePlayerName"];
     
         }
-            
+
         //For Random Select Diety
         if(isset($_POST['thecheckBoxRandomDiety']) && $_POST['thecheckBoxRandomDiety'] == 1) 
         {
             $deity = rand (0, 18);
-        /* $deity = getRandomDiety();*/
 
         }
         else
@@ -133,8 +132,6 @@
 
         $unholy = getDeityUnholy($deity);
 
-
-        
 
 /*
         if(isset($_POST["theAlignment"]))
@@ -237,11 +234,11 @@
 
        $criticalDie = criticalDie($level);
 
-       $threat = threatRange($level);
+     //  $threat = threatRange($level);
 
        $actionDice = actionDice($level);
 
-       $attackBonus = deedDie($level);
+      // $attackBonus = deedDie($level);
 
        $luckySign = array();
        $luckySign = getBirthAugur();
@@ -317,9 +314,11 @@
 
 
        $trainedWeapon = $occupationArray[2];
--
+
 
        $tradegoods = $occupationArray[4];
+
+       $tradeGoodsAddition = tradeGoodsAddition($profession, $trainedWeapon);
 
         $weaponArray = array();
         $weaponNames = array();
@@ -523,6 +522,15 @@
            echo $genderName;
            ?>
        </span>
+
+       <span id="deity">
+           <?php
+           echo $deityName . " (" . $deityDescription . ")<br/><br/> Weapons (holy): " . $weaponsAllowed . "<br/><br/> Unholy Creatures: " . $unholy;
+           ?>
+       </span>
+
+
+
        
        
        
@@ -577,7 +585,7 @@
        
        <span id="trainedWeapon">
            <?php
-           echo $trainedWeapon . ' / ' /*. $tradegoods*/;
+           echo $trainedWeapon . ' / ' . $tradegoods . $tradeGoodsAddition;
 
            ?></span>
 
@@ -643,7 +651,7 @@
         <span id="attackBonus">
         <?php
                // $attackBonus = getModSign($attackBonus);
-                echo $attackBonus;
+               // echo $attackBonus;
            ?>
            </span>
 
@@ -713,7 +721,7 @@
         
         <span id="threatRange">
             <?php
-                echo $threat;
+            //    echo $threat;
             ?>
         </span>
 
