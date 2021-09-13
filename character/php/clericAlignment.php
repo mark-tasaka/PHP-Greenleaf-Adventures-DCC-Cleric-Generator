@@ -76,7 +76,7 @@ function getDeityUnholy($input)
 
     if($input >11)
     {
-        $unholy = "Angles, paladins, lawful dragons, Lords of Law, Lawful Primes & Law-aligned humaniods";
+        $unholy = "Angels, paladins, lawful dragons, Lords of Law, Lawful Primes & Law-aligned humaniods";
     }
 
     return $unholy;

@@ -446,22 +446,22 @@ body{
 #criticalDieTable{
     position:absolute;
     top: 227px;
-    left: 255px;
+    left: 220px;
     font-size: 0.85em;
 }
 
-/*
-#deedDie{
+
+#spellCheck{
     position:absolute;
-    top: 370px;
-    left: 270px;
+    top: 227px;
+    left: 530px;
     font-size: 0.9em;
 }
-*/
+
 #initiative{
     position:absolute;
     top: 227px;
-    left: 380px;
+    left: 345px;
     font-size: 0.9em;
 }
 
@@ -475,7 +475,7 @@ body{
 #attackBonus{
     position:absolute;
     top: 227px;
-    left: 440px;
+    left: 425px;
     font-size: 0.9em;
 }
 
@@ -635,3 +635,151 @@ body{
     left: 505px;
     font-size: 0.8em;
 }
+
+
+
+#layHandsLaw1{
+    position: absolute;
+    top: 655px;
+    left: 495px;
+	font-size: 0.7em;
+}
+
+#layHandsLaw2{
+    position: absolute;
+    top: 690px;
+    left: 495px;
+	font-size: 0.7em;
+}
+
+#layHandsLaw3{
+    position: absolute;
+    top: 729px;
+    left: 495px;
+	font-size: 0.7em;
+}
+
+#layHandsLaw4{
+    position: absolute;
+    top: 765px;
+    left: 495px;
+	font-size: 0.7em;
+}
+
+
+#layHandsLaw5{
+    position: absolute;
+    top: 802px;
+    left: 495px;
+	font-size: 0.7em;
+}
+
+
+#layHandsNeutral1{
+    position: absolute;
+    top: 655px;
+    left: 566px;
+	font-size: 0.7em;
+}
+
+#layHandsNeutral2{
+    position: absolute;
+    top: 690px;
+    left: 566px;
+	font-size: 0.7em;
+}
+
+#layHandsNeutral3{
+    position: absolute;
+    top: 729px;
+    left: 566px;
+	font-size: 0.7em;
+}
+
+#layHandsNeutral4{
+    position: absolute;
+    top: 765px;
+    left: 566px;
+	font-size: 0.7em;
+}
+
+
+#layHandsNeutral5{
+    position: absolute;
+    top: 802px;
+    left: 566px;
+	font-size: 0.7em;
+}
+
+
+#layHandsChaos1{
+    position: absolute;
+    top: 655px;
+    left: 633px;
+	font-size: 0.7em;
+}
+
+#layHandsChaos2{
+    position: absolute;
+    top: 690px;
+    left: 633px;
+	font-size: 0.7em;
+}
+
+#layHandsChaos3{
+    position: absolute;
+    top: 729px;
+    left: 633px;
+	font-size: 0.7em;
+}
+
+#layHandsChaos4{
+    position: absolute;
+    top: 765px;
+    left: 633px;
+	font-size: 0.7em;
+}
+
+
+#layHandsChaos5{
+    position: absolute;
+    top: 802px;
+    left: 633px;
+	font-size: 0.7em;
+}
+
+#level1Spells{
+    position: absolute;
+    top: 940px;
+    left: 395px;
+	font-size: 0.9em;
+}
+
+#level2Spells{
+    position: absolute;
+    top: 940px;
+    left: 445px;
+	font-size: 0.9em;
+}
+
+#level3Spells{
+    position: absolute;
+    top: 940px;
+    left: 495px;
+	font-size: 0.9em;
+}
+
+#level4Spells{
+    position: absolute;
+    top: 940px;
+    left: 545px;
+	font-size: 0.9em;
+}
+
+#level5Spells{
+    position: absolute;
+    top: 940px;
+    left: 597px;
+	font-size: 0.9em;
+}
+

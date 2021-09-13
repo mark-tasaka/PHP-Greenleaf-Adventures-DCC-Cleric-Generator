@@ -156,6 +156,7 @@ function criticalDie($level)
 
 }
 
+//Cleric
 function attackBonus($level)
 {
     $attackBonus = 0;
