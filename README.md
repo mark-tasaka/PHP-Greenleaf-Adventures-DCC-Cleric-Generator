@@ -4,6 +4,14 @@ The Greenleaf Adventures Cleric Character Generator is the fourth iteration of t
 ----------------
 
 
+
+Updates 1.03: 2021-09-13
+
+Updates to dccCleric.php, cleric.css, classDetails.php, and clericAlignment.php.
+
+
+
+
 Updates 1.02: 2021-09-12
 
 Updates to dccCleric.php, cleric.css, classDetails.php, languages.php, zeroLvOccupation.php.
