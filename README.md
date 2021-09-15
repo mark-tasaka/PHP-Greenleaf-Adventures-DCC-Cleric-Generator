@@ -4,6 +4,22 @@ The Greenleaf Adventures Cleric Character Generator is the fourth iteration of t
 ----------------
 
 
+Greenleaf Dungeon Crawl Classics Cleric Character Generator:
+
+https://www.tasaka-games.com/greenleaf/more/classes/cleric/
+
+-----------------
+
+
+
+
+Updates 1.04: 2021-09-15
+
+Completed version of the DCC Cleric Character Generator V4 added.  Link to live the version of the generator added in ReadMe file.
+
+
+
+
 
 Updates 1.03: 2021-09-13
 
